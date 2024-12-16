@@ -37,58 +37,78 @@ public class ClaseAbstractas extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         Lista = new javax.swing.JList<>();
         btnAñadir = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        textPosicion = new javax.swing.JTextField();
+        btnEliminar = new javax.swing.JButton();
+        btnEliminarPorPosicion = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
         jLabel1.setText("Entradas de elementos");
+        jLabel1.setToolTipText("");
+        jLabel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(102, 255, 255), new java.awt.Color(153, 255, 255), null, new java.awt.Color(0, 255, 255)));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 27, 150, 22));
 
-        textAñadir.setAlignmentY(10.0F);
+        textAñadir.setActionCommand(null);
         textAñadir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textAñadirActionPerformed(evt);
             }
         });
+        getContentPane().add(textAñadir, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 30, 216, -1));
 
         jScrollPane1.setViewportView(Lista);
 
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 140, 209, -1));
+
         btnAñadir.setText("Añadir");
+        btnAñadir.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnAñadir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAñadirActionPerformed(evt);
             }
         });
+        btnAñadir.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                btnAñadirKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                btnAñadirKeyTyped(evt);
+            }
+        });
+        getContentPane().add(btnAñadir, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel1)
-                        .addGap(30, 30, 30)
-                        .addComponent(textAñadir, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(68, 68, 68)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnAñadir)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(32, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(textAñadir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnAñadir)
-                .addGap(31, 31, 31)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(46, Short.MAX_VALUE))
-        );
+        jLabel2.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
+        jLabel2.setText("Posición");
+        jLabel2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(102, 0, 0), new java.awt.Color(255, 0, 0), null, java.awt.Color.white));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, -1, -1));
+
+        textPosicion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textPosicionActionPerformed(evt);
+            }
+        });
+        getContentPane().add(textPosicion, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, 100, -1));
+
+        btnEliminar.setText("Eliminar");
+        btnEliminar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, -1, -1));
+
+        btnEliminarPorPosicion.setText("Eliminar por posicion");
+        btnEliminarPorPosicion.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnEliminarPorPosicion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarPorPosicionActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnEliminarPorPosicion, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -96,12 +116,38 @@ public class ClaseAbstractas extends javax.swing.JFrame {
     private void btnAñadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAñadirActionPerformed
      String entrada = textAñadir.getText();
      hardware.addElement(entrada);
+     textAñadir.setText(""); // Limpiar el campo de texto
      
     }//GEN-LAST:event_btnAñadirActionPerformed
 
     private void textAñadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textAñadirActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_textAñadirActionPerformed
+
+    private void textPosicionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textPosicionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textPosicionActionPerformed
+
+    private void btnEliminarPorPosicionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarPorPosicionActionPerformed
+        int p = Integer.parseInt(textPosicion.getText()) - 1 ;
+        hardware.remove(p);
+    }//GEN-LAST:event_btnEliminarPorPosicionActionPerformed
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        hardware.removeAllElements();
+    }//GEN-LAST:event_btnEliminarActionPerformed
+
+    private void btnAñadirKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnAñadirKeyPressed
+     String entrada = textAñadir.getText();
+     hardware.addElement(entrada);
+     textAñadir.setText("");
+    }//GEN-LAST:event_btnAñadirKeyPressed
+
+    private void btnAñadirKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnAñadirKeyTyped
+     String entrada = textAñadir.getText();
+     hardware.addElement(entrada);
+     textAñadir.setText(""); // Limpiar el campo de texto
+    }//GEN-LAST:event_btnAñadirKeyTyped
 
     /**
      * @param args the command line arguments
@@ -141,8 +187,12 @@ public class ClaseAbstractas extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JList<String> Lista;
     private javax.swing.JButton btnAñadir;
+    private javax.swing.JButton btnEliminar;
+    private javax.swing.JButton btnEliminarPorPosicion;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField textAñadir;
+    private javax.swing.JTextField textPosicion;
     // End of variables declaration//GEN-END:variables
 }
